@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\static\css\index.css">
+
+    <title>Heart Disese Predictor</title>
+</head>
+<body>
+
+<main class="body">
+    <article class="form__title">
+        <h1>HEART <br> DISEASE <br> PREDICTION</h1>
+
+    </article>
+    
+    
+    <article class="form">
+        
+        {% if model_pred %}
+            <h3 class="Se-Ch">
+                Your result is {{ model_pred }}, ~Recall is 92% 
+            </h3>
+        {% endif %}
+
+        <form class="form" action="/" method="POST">
+    
+
+            <div class="form-col">
+                <h3>User info</h3>
+                
+                    <div class="user__info">
+                        <label class="age user_in" for="age">Age :
+                            <input type="text" name="age" id="" required>
+                        </label>
+                    </div>
+
+            </div>
+
+            <div class="sex-form">
+                <h3>Gender</h3>
+                
+                <div class="user_gender">
+                    <div>Male 
+                        <input type="radio" name="sex" id="1" value="1" required>
+                    </div>
+                    <div>Female
+                        <input type="radio" name="sex" id="0" value="0" required>
+                    </div>
+                </div>
+            </div>
+                    
+            <div class="chestPain__type">
+                    <h3>Chest pain type</h3>
+                   
+                      <div class="pain_types">
+                        <span> Typical Agina <input type="radio" name="cp" id="0" value="0" required></span>
+                        <span>Atypical Angina <input type="radio" name="cp" id="1" value="1" required></span>
+                        <span>Non-aginal Pain <input type="radio" name="cp" id="2" value="2" required></span>
+                        <span>Asymptomatic <input type="radio" name="cp" id="3" value="3" required></span>
+                      </div>
+            </div>
+                
+
+                <div class="slope">
+                    <h3>slope</h3>
+                    
+                   <div class="slope_types">
+                    <span>Upsloping <input type="radio" name="slope" id="0" value="0" required></span>
+                    <span>Flatsloping <input type="radio" name="slope" id="1" value="1" required></span>
+                    <span>Downsloping <input type="radio" name="slope" id="2" value="2" required></span>
+                   </div>
+                </div>
+           
+            
+            <div class="Ex-Ind-Ag">
+               
+                    <h3>Exercised Induced Agina</h3>
+                   
+                    <div class="options">
+                        <span>No <input type="radio" name="exang" id="0" value="0" required></span>
+                        <span>Yes <input type="radio" name="exang" id="1" value="1" required></span>
+                    </div>
+            </div>
+
+                <div class="Th-St-Re">
+                    <h3>Thalium Stress Result</h3>
+                   
+                                <div class="stress__result">
+                                    <span>normal <input type="radio" name="thal" id="3" value="3" required></span>
+                                    <span>fixed defect <input type="radio" name="thal" id="6" value="6" required></span>
+                                    <span>reversable defect <input type="radio" name="thal" id="7" value="7" required></span>
+                                </div>
+                </div>
+            
+
+            <div class="no__of__cl">
+              
+                <h3>No. of Coloured Vessels</h3>
+            <p>colored vessel means
+                the doctor can see the blood passing through</p>
+                
+                <div class="number">
+                    <span>0 (zero) <input type="radio" name="ca" id="0" value="0" required></span>
+                    <span>1 (one) <input type="radio" name="ca" id="1" value="1" required></span>
+                    <span>2 (two) <input type="radio" name="ca" id="2" value="2" required></span>
+                    <span>3 (two) <input type="radio" name="ca" id="3" value="3" required></span>
+                </div>
+            </div>
+
+                <div class="oldpeak">
+                    <h3>Oldpeak</h3>
+                    <span>
+                        (ST depression induced by exercise relative to rest)
+                    </span>
+                    
+                    <input type="text" name="oldpeak" id="" required>
+                </div>
+            
+        
+         
+                <div class="Re-El-Re">
+                    <h3>Resting Electrocardiographic Results</h3>
+                   
+                    <div class="results">
+                        <span>Nothing to note <input type="radio" name="restecg" id="0" value="0" required></span>
+                        <span>ST-T Wave abnormality <input type="radio" name="restecg" id="1" value="1" required></span>
+                        <span>Possible or definite left ventricular hypertrophy <input type="radio" name="restecg" id="2" value="2" required></span>
+                    </div>
+                   
+                </div>
+           
+
+                <div class="fa-bl-su">
+                    <h3>Fasting Blood Sugar</h3>
+                    
+                    <span>>120 mg/dl</span>
+                           
+                    <div class="bl-su">
+                        <span>-False <input type="radio" name="fbs" id="0" value="0" required></span>
+                        <span>-True <input type="radio" name="fbs" id="1" value="1" required></span>
+                    </div>
+                </div>
+           
+                <div class="Thalach">
+                    <h3>Resting Blood Pressure</h3>
+                    <span>(in mm Hg on admission to the hospital)</span>
+                    <input type="text" name="trestbps" id="" required>
+                </div>
+         
+                <div class="Thalach">
+                    <h3>Thalach</h3>
+                    <span>(maximum heart rate achieved)</span>
+                    <input type="text" name="thalach" id="" required>
+                </div>
+
+                <div class="Se-Ch">
+                    <h3>Serum Cholestoral</h3>
+                    <span>
+                        (above 200 is cause for concern)
+                    </span>
+                    <input type="text" name="chol" id="" required>
+                </div>
+           
+
+            <a href="/">
+                <button class="btn">
+                    <span>predict</span>
+                </button>
+            </a>
+        </form>
+    
+    </article>
+    
+</main>
+</body>
+</html>
