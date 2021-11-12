@@ -20,9 +20,7 @@
     <article class="form">
         
         {% if model_pred %}
-            <h3 class="Se-Ch">
-                Your result is {{ model_pred }}, ~Recall is 92% 
-            </h3>
+            <h3 class="Se-Ch">Your result is {{ prediction }} <br> ~Recall is 92% </h3>
         {% endif %}
 
         <form class="form" action="/" method="POST">
