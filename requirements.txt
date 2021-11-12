@@ -9,6 +9,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
 numpy
+pandas
 sentry-sdk==0.19.5
 scikit-image==0.18.1
 scikit-learn
